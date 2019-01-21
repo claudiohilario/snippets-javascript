@@ -12,7 +12,8 @@
  */
 function generateBodyMultipart(boundary, files = []) {
   const arrBuffer = [];
-  files.forEach(file => {
+  
+  files.forEach(function(file) {
     let data = "";
     data += "--" + boundary;
     data += "\r\n";
@@ -26,7 +27,6 @@ function generateBodyMultipart(boundary, files = []) {
     data += "Content-Type: " + file.contentType;
     data += "\r\n\r\n";
 
-    console.log(data);
     arrBuffer.push(Buffer.from(data, "utf8"));
     arrBuffer.push(file.buffer);
   });
