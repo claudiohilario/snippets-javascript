@@ -17,15 +17,14 @@
  *  E.g.: -1;
  */
 function compareVersion(v1, v2) {
-    if( v1 === v2) {
-  	    return 0;
-    }
-
-	const arrV1 = v1.split('.').map(number => parseInt(number));
+   if( v1 === v2) {
+      return 0;
+   }
+  const arrV1 = v1.split('.').map(number => parseInt(number));
   const arrV2 = v2.split('.').map(number => parseInt(number));
 
   for(let j = 0; j < 3; j++) {
   	 if(arrV1[j] == arrV2[j]) { continue; }   
-     return arrV1[j] > arrV2[j] ? 1 : -1;
+         return arrV1[j] > arrV2[j] ? 1 : -1;
   }
 }
